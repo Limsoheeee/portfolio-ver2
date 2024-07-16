@@ -5,17 +5,17 @@ import background from "../../assets/Image/background.png";
 import introMain from "../../assets/Image/introMain.png";
 import introText from "../../assets/Image/introText.png";
 
-const Intro = () => {
+const Intro = ({ to1Ref }) => {
   return (
     <div css={rootStyles(background)}>
       <div css={nameNav}>Front-end portfolio</div>
       <div css={innerStyles(background)}>
         <div css={imageWrapper}>
-          <img className="textImage" src={introText} alt="text" />
+          <img ref={to1Ref} className="textImage" src={introText} alt="text" />
           <img className="mainImage" src={introMain} alt="main" />
         </div>
       </div>
-      <div css={bottomStyles}>DO YOU WANT TO SEE MORE? SCROLL DOWM↓</div>
+      <div css={bottomStyles}>DO YOU WANT TO SEE MORE? SCROLL DOWM</div>
     </div>
   );
 };

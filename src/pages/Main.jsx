@@ -1,18 +1,56 @@
-/** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { useResizeDetector } from "react-resize-detector";
 import { css } from "@emotion/react";
 import Intro from "../components/main/Intro";
 import PersonalProject from "../components/main/PersonalProject";
 
+gsap.registerPlugin(useGSAP);
+
 const Main = () => {
   const { width, ref } = useResizeDetector();
+  const trigger1Ref = useRef();
+  const trigger2Ref = useRef();
+
+  const to1Ref = useRef();
+
+  useGSAP(() => {
+    const ani1 = gsap.timeline();
+    ani1
+      .to(to1Ref.current, {
+        rotation: 720,
+        scale: 0,
+        borderRadius: 200,
+      })
+      .to(to1Ref.current, {
+        rotation: 0,
+        scale: 1,
+        borderRadius: 20,
+      });
+
+    ScrollTrigger.create({
+      animation: ani1,
+      trigger: trigger1Ref,
+      start: "top top",
+      end: "+=2000",
+      scrub: true,
+      pin: true,
+      anticipatePin: 1,
+      markers: true,
+    });
+  });
+
   return (
     <div ref={ref}>
       {width > 1439 ? (
         <>
-          <Intro />
-          <PersonalProject />
+          <section ref={trigger1Ref}>
+            <Intro to1Ref={to1Ref} />
+          </section>
+          <section ref={trigger2Ref}>
+            <PersonalProject />
+          </section>
         </>
       ) : (
         <div css={wrap}>
