@@ -1,18 +1,19 @@
-/** @jsxImportSource @emotion/react */
 import React from "react";
 import { css } from "@emotion/react";
 import background from "../../assets/Image/background.png";
 import introMain from "../../assets/Image/introMain.png";
 import introText from "../../assets/Image/introText.png";
+import { useFadeIn } from "../../hook";
 
-const Intro = ({ to1Ref }) => {
+const Intro = ({ trigger1Ref, to1Ref }) => {
+  const animatedItem = useFadeIn();
   return (
-    <div css={rootStyles(background)}>
+    <div ref={trigger1Ref} css={rootStyles(background)}>
       <div css={nameNav}>Front-end portfolio</div>
       <div css={innerStyles(background)}>
-        <div css={imageWrapper}>
-          <img ref={to1Ref} className="textImage" src={introText} alt="text" />
-          <img className="mainImage" src={introMain} alt="main" />
+        <div ref={to1Ref} css={imageWrapper}>
+          <img css={textImage} src={introText} alt="text" />
+          <img css={mainImage} src={introMain} alt="main" />
         </div>
       </div>
       <div css={bottomStyles}>DO YOU WANT TO SEE MORE? SCROLL DOWM</div>
@@ -70,14 +71,15 @@ const imageWrapper = css`
   justify-content: center;
   padding-top: 2rem;
   gap: 1rem;
-  .mainImage {
-    width: 406px;
-    height: 502px;
-  }
-  .textImage {
-    width: 476px;
-    height: 473px;
-  }
+`;
+
+const mainImage = css`
+  width: 406px;
+  height: 502px;
+`;
+const textImage = css`
+  width: 476px;
+  height: 473px;
 `;
 
 const bottomStyles = css`
