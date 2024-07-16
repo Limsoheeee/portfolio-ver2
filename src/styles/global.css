@@ -11,7 +11,13 @@
     format("woff2");
   font-weight: 500;
 }
-
+@font-face {
+  font-family: "Cafe24Lovingu";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Lovingu.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "HSSaemaul-Regular";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff")
@@ -31,6 +37,13 @@
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2")
     format("woff");
   font-weight: 400;
+}
+@font-face {
+  font-family: "HancomUljuBangudae";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2205-2@1.0/HancomUljuBangudae.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 html,
 body {

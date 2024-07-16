@@ -2,92 +2,95 @@ import { css } from "@emotion/react";
 import "./global.css";
 
 const reset = css`
-  a,
-  abbr,
-  acronym,
-  address,
-  applet,
-  article,
-  aside,
-  audio,
-  b,
-  big,
-  blockquote,
+  html,
   body,
-  canvas,
-  caption,
-  center,
-  cite,
-  code,
-  dd,
-  del,
-  details,
-  dfn,
   div,
-  dl,
-  dt,
-  em,
-  embed,
-  fieldset,
-  figcaption,
-  figure,
-  footer,
-  form,
+  span,
+  applet,
+  object,
+  iframe,
   h1,
   h2,
   h3,
   h4,
   h5,
   h6,
-  header,
-  hgroup,
-  html,
-  i,
-  iframe,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
   img,
   ins,
   kbd,
-  label,
-  legend,
-  li,
-  mark,
-  menu,
-  nav,
-  object,
-  ol,
-  output,
-  p,
-  pre,
   q,
-  ruby,
   s,
   samp,
-  section,
   small,
-  span,
   strike,
   strong,
   sub,
-  summary,
-  table,
-  tbody,
-  td,
-  tfoot,
-  th,
-  thead,
-  time,
-  tr,
+  sup,
   tt,
-  u,
-  ul,
   var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
   video {
-    border: 0;
-    font-size: 100%;
     margin: 0;
     padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
   }
+  /* HTML5 display-role reset for older browsers */
   article,
   aside,
   details,
@@ -112,57 +115,16 @@ const reset = css`
   q {
     quotes: none;
   }
-  blockquote:after,
   blockquote:before,
-  q:after,
-  q:before {
+  blockquote:after,
+  q:before,
+  q:after {
     content: "";
     content: none;
   }
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "IM_Hyemin-Bold ", "sans-serif";
-  }
-  body {
-    background-color: rgba(255, 255, 255, 0);
-    overflow: hidden;
-    height: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  ul,
-  ol,
-  li {
-    list-style: none;
-  }
-  a {
-    color: #000000;
-    text-decoration: none;
-  }
-  button {
-    color: #000000;
-    background-color: transparent;
-    border: none;
-    outline: none;
-  }
-  p {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-  }
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar,
-  #root::-webkit-scrollbar {
-    overflow: hidden !important;
-    -webkit-appearance: none !important;
-    display: none !important;
   }
 `;
 
