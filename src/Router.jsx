@@ -4,6 +4,7 @@ import { Global } from "@emotion/react";
 import reset from "./styles/Reset";
 import Main from "./pages/Main";
 import Error from "./pages/Error";
+import Project from "./pages/Project";
 
 const Router = () => {
   return (
@@ -11,6 +12,7 @@ const Router = () => {
       <Global styles={reset} />
       <Routes>
         <Route exact path="/" element={<Main />} />
+        <Route exact path="/project" element={<Project />} />
         <Route exact path="/error" element={<Error />} />
       </Routes>
     </>

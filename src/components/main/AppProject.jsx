@@ -63,7 +63,7 @@ const AppProject = () => {
       animation: ani,
       trigger: triggerRef.current,
       start: "top top",
-      end: "+=4000",
+      end: "+=2000",
       scrub: true,
       pin: true,
       anticipatePin: 1,

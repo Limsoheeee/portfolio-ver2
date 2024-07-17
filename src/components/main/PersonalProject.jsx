@@ -53,7 +53,7 @@ const PersonalProject = () => {
       animation: ani2,
       trigger: triggerRef2.current,
       start: "top top",
-      end: "+=2000",
+      end: "+=1000",
       scrub: true,
       pin: true,
       anticipatePin: 1,
