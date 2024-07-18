@@ -71,6 +71,7 @@ const innerStyles = (background) => css`
 const mainImage = css`
   width: 60%;
   min-width: 278px;
+  min-height: 380px;
 `;
 
 const bottomStyles = css`
