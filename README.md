@@ -24,7 +24,7 @@ $ npm run dev
 
 ## 👉🏻 프로젝트 소개
 
->  react vite, gasp를 활용한<br>
+>  react vite, gasp scrollTrigger를 활용하여 패럴렉스 스크롤 이벤트를 적용한<br>
 >  포트폴리오 웹사이트 <br>
 <br>
 
