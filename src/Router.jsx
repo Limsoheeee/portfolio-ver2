@@ -12,7 +12,7 @@ const Router = () => {
       <Global styles={reset} />
       <Routes>
         <Route exact path="/" element={<Main />} />
-        <Route exact path="/*" element={<Error />} />
+        <Route exact path="*" element={<Error />} />
       </Routes>
     </>
   );
