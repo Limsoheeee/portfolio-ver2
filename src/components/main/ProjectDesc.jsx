@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import background from "../../assets/Image/projectDescBackground.png";
-import missgo from "../../assets/Image/missgo.png";
 import { useNavigate } from "react-router-dom";
 import { historyData } from "../../utils/useData";
 
@@ -23,7 +22,7 @@ const ProjectDesc = () => {
 
   const gsapTrigger = () => {
     const ani1 = gsap.timeline();
-    ani1.to(toRef.current, {
+    ani1.from(toRef.current, {
       autoAlpha: 0,
       scale: 5,
       width: "100vw",
@@ -113,6 +112,8 @@ const innerStyles = (background) => css`
 
 const mainImage = css`
   width: 60%;
+  min-width: 278px;
+  min-height: 380px;
 `;
 
 const bottomStyles = css`
