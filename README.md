@@ -7,7 +7,7 @@
 
 ## 👉 웹사이트 
 
->  [https://portfolio-ver2-sohee.vercel.app/]([https://ca-nya.com/](https://portfolio-ver2-sohee.vercel.app/))
+>  [https://portfolio-ver2-sohee.vercel.app](https://portfolio-ver2-sohee.vercel.app)
 
 <br>
 
