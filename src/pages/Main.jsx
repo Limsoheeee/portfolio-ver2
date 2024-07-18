@@ -14,6 +14,7 @@ import Project from "@/components/main/Project";
 import RestIntro from "@/components/main/RestIntro";
 import Introduce from "@/components/main/Introduce";
 import IntroduceComment from "@/components/main/IntroduceComment";
+import Contact from "@/components/main/Contact";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +36,7 @@ const Main = () => {
           <RestIntro />
           <Introduce />
           <IntroduceComment />
+          <Contact />
         </div>
       ) : (
         <div css={wrap}>

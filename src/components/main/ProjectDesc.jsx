@@ -37,7 +37,7 @@ const ProjectDesc = () => {
       scrub: true,
       pin: true,
       anticipatePin: 1,
-      markers: true,
+      markers: false,
       // onLeave: () => navigateToNextPage(),
       //* 페이지 온클릭이벤트, 함수처리
     });

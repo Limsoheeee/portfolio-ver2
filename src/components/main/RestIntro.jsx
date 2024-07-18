@@ -18,12 +18,12 @@ const RestIntro = () => {
   const gsapTrigger = () => {
     const ani = gsap.timeline();
     ani
-      .from(to1Ref.current, { xPercent: 300 })
-      .from(to2Ref.current, { xPercent: -300 })
-      .from(to3Ref.current, { xPercent: 300 })
-      .from(to4Ref.current, { xPercent: -300 })
-      .from(to5Ref.current, { xPercent: 300 })
-      .from(to6Ref.current, { xPercent: -300 });
+      .to(to1Ref.current, { xPercent: 300 })
+      .to(to2Ref.current, { xPercent: -300 })
+      .to(to3Ref.current, { xPercent: 300 })
+      .to(to4Ref.current, { xPercent: -300 })
+      .to(to5Ref.current, { xPercent: 300 })
+      .to(to6Ref.current, { xPercent: -300 });
     ScrollTrigger.create({
       animation: ani,
       trigger: triggerRef.current,
@@ -31,8 +31,8 @@ const RestIntro = () => {
       end: "+=3000",
       scrub: true,
       pin: true,
+      markers: false,
       anticipatePin: 1,
-      markers: true,
     });
   };
 

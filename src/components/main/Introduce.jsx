@@ -23,7 +23,7 @@ const Introduce = () => {
       scrub: true,
       pin: true,
       anticipatePin: 1,
-      markers: true,
+      //   markers: true,
     });
   };
 
