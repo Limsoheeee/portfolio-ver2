@@ -74,6 +74,7 @@ const AppProject = () => {
   useGSAP(() => {
     gsapTrigger();
   }, []);
+
   return (
     <div css={rootStyles} ref={triggerRef}>
       <div css={nameNav}>Portfolio of projects carried out by the company</div>

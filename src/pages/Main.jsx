@@ -10,13 +10,10 @@ import AboutMe from "../components/main/AboutMe";
 import WebProject from "../components/main/WebProject";
 import AppProject from "../components/main/AppProject";
 import ProjectDesc from "../components/main/ProjectDesc";
-import missgo from "../assets/Image/missgo.png";
-import criminalIP from "../assets/Image/criminalIp.png";
-import wetoyou from "../assets/Image/wetoyou.png";
-import wetoyouPartner from "../assets/Image/wetoyouPartners.png";
-import weconec from "../assets/Image/weconec.png";
-import ProjectLayout from "../components/main/ProjectLayout";
 import Project from "@/components/main/Project";
+import RestIntro from "@/components/main/RestIntro";
+import Introduce from "@/components/main/Introduce";
+import IntroduceComment from "@/components/main/IntroduceComment";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +32,9 @@ const Main = () => {
           <AppProject />
           <ProjectDesc />
           <Project />
+          <RestIntro />
+          <Introduce />
+          <IntroduceComment />
         </div>
       ) : (
         <div css={wrap}>
