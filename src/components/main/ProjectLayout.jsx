@@ -70,6 +70,7 @@ const innerStyles = (background) => css`
 
 const mainImage = css`
   width: 60%;
+  min-width: 278px;
 `;
 
 const bottomStyles = css`
