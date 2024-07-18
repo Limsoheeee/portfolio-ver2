@@ -65,3 +65,20 @@ scrollTrigger에 옵션에서 함수적용하도록 하는 onLeave추가하여 �
  
  </div>
  </details>
+  <details>
+ <summary>vercel배포시 404페이지 오류</summary>
+ <div markdown="1">       
+
+  <br>
+  
+vercel에서 배포 시 라우팅에서 '/*'페이지 처리 진행해서 404페이지 구현하였으나, 배포시 설정해 놓은 에러페이지가 미노출
+vercel.json에서 아래와 같이 처리하여 배포하여 404페이지 보이도록 수정
+```js
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
+```
+
+ 
+ </div>
+ </details>
