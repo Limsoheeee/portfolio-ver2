@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import background from "../../assets/Image/projectDescBackground.png";
 import missgo from "../../assets/Image/missgo.png";
 import { useNavigate } from "react-router-dom";
+import { historyData } from "../../utils/useData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,8 @@ const ProjectDesc = () => {
   const navigate = useNavigate();
   const triggerRef = useRef();
   const toRef = useRef();
+
+  const item = historyData.slice(0, 1);
 
   const navigateToNextPage = () => {
     navigate("/project");
@@ -35,7 +38,7 @@ const ProjectDesc = () => {
       pin: true,
       anticipatePin: 1,
       markers: true,
-      onLeave: () => navigateToNextPage(),
+      // onLeave: () => navigateToNextPage(),
       //* 페이지 온클릭이벤트, 함수처리
     });
   };
@@ -44,23 +47,36 @@ const ProjectDesc = () => {
     gsapTrigger();
   }, []);
 
-  const text =
-    "기능 설명 기능설명기능 설명 기능설명 \n 기능기능기능 \n기능 설명 기능설명기능 설명  ";
-
   return (
     <div ref={triggerRef} css={rootStyles}>
       <div css={innerStyles(background)}>
-        <img ref={toRef} css={mainImage} src={missgo} alt="missgo" />
+        <div css={contentWrapper}>
+          <div css={imageWrap}>
+            <img
+              ref={toRef}
+              css={mainImage}
+              src={item[0].imgSrc}
+              alt={item.title}
+            />
+          </div>
+          <div css={descWrap}>
+            <b>{item[0].title} 주요기능</b>
+            {item[0].skill.map((skill) => (
+              <div key={skill.no}>
+                <li>{skill.title}</li>
+                <span className="descText">{skill.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div css={descWrap}>
-        <b>Missgo - PC.ver 주요기능</b>
-        <li>기능 기능 기능 기능</li>
-        <span className="descText">{text}</span>
-        <li>기능 기능 기능 기능</li>
-        <span className="descText">{text}</span>
-      </div>
-      <div css={linkWrap}>website 바로가기</div>
-      <div css={bottomStyles}>Missgo PC.ver</div>
+
+      <a href={item[0].link} target="_blank">
+        <div css={linkWrap}>
+          {item[0].type === "web" ? "website 바로가기" : "app 다운로드"}
+        </div>
+      </a>
+      <div css={bottomStyles}>{item[0].title}</div>
     </div>
   );
 };
@@ -93,14 +109,10 @@ const innerStyles = (background) => css`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
 `;
 
 const mainImage = css`
-  position: absolute;
-  left: 20%;
-  bottom: 25%;
-  width: 425px;
+  width: 60%;
 `;
 
 const bottomStyles = css`
@@ -119,10 +131,10 @@ const bottomStyles = css`
 `;
 
 const descWrap = css`
-  position: absolute;
+  /* position: absolute;
+  right: 10%; */
   width: 428px;
   height: 365px;
-  right: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -155,4 +167,23 @@ const linkWrap = css`
   color: #ffffff;
   border-radius: 50px;
   font-size: 18px;
+`;
+
+const contentWrapper = css`
+  width: 80%;
+  height: 581px;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5%;
+`;
+
+const imageWrap = css`
+  width: 50%;
+  height: 581px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
 `;

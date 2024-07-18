@@ -16,6 +16,7 @@ import wetoyou from "../assets/Image/wetoyou.png";
 import wetoyouPartner from "../assets/Image/wetoyouPartners.png";
 import weconec from "../assets/Image/weconec.png";
 import ProjectLayout from "../components/main/ProjectLayout";
+import Project from "@/components/main/Project";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +34,7 @@ const Main = () => {
           <WebProject />
           <AppProject />
           <ProjectDesc />
+          <Project />
         </div>
       ) : (
         <div css={wrap}>

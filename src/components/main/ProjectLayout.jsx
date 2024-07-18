@@ -10,18 +10,21 @@ const ProjectLayout = ({ item, isFirst }) => {
   };
   return (
     <div css={rootStyles}>
-      {isFirst && <div onClick={onClickHandler}>위로가기</div>}
       <div css={innerStyles(background)}>
-        <img css={mainImage} src={item.imgSrc} alt={item.title} />
-      </div>
-      <div css={descWrap}>
-        <b>{item.title} 주요기능</b>
-        {item.skill.map((skill) => (
-          <div key={skill.no}>
-            <li>{skill.title}</li>
-            <span className="descText">{skill.desc}</span>
+        <div css={contentWrapper}>
+          <div css={imageWrap}>
+            <img css={mainImage} src={item.imgSrc} alt={item.title} />
           </div>
-        ))}
+          <div css={descWrap}>
+            <b>{item.title} 주요기능</b>
+            {item.skill.map((skill) => (
+              <div key={skill.no}>
+                <li>{skill.title}</li>
+                <span className="descText">{skill.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <a href={item.link} target="_blank">
         <div css={linkWrap}>
@@ -46,6 +49,7 @@ const rootStyles = css`
   align-items: center;
   position: relative;
   overflow: hidden !important;
+  border-top: 1px solid #f7e6e9;
 `;
 
 const innerStyles = (background) => css`
@@ -65,10 +69,7 @@ const innerStyles = (background) => css`
 `;
 
 const mainImage = css`
-  position: absolute;
-  left: 20%;
-  bottom: 25%;
-  width: 425px;
+  width: 60%;
 `;
 
 const bottomStyles = css`
@@ -87,10 +88,10 @@ const bottomStyles = css`
 `;
 
 const descWrap = css`
-  position: absolute;
+  /* position: absolute;
+  right: 20%; */
   width: 428px;
   height: 365px;
-  right: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -123,4 +124,23 @@ const linkWrap = css`
   color: #ffffff;
   border-radius: 50px;
   font-size: 18px;
+`;
+
+const contentWrapper = css`
+  width: 80%;
+  height: 581px;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5%;
+`;
+
+const imageWrap = css`
+  width: 50%;
+  height: 581px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5%;
 `;
