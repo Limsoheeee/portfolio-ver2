@@ -23,7 +23,7 @@ const ProjectDesc = () => {
 
   const gsapTrigger = () => {
     const ani1 = gsap.timeline();
-    ani1.from(toRef.current, {
+    ani1.to(toRef.current, {
       autoAlpha: 0,
       scale: 5,
       width: "100vw",
